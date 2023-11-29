@@ -26,6 +26,7 @@ import java.net.URL;
 import static org.hamcrest.MatcherAssert.assertThat;
 import org.junit.FixMethodOrder;
 import org.junit.runners.MethodSorters;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class D3Test {
