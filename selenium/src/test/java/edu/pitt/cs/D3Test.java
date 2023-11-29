@@ -34,11 +34,9 @@ public class D3Test {
   JavascriptExecutor js;
   @Before
   public void setUp() {
-    // driver = new ChromeDriver();
     ChromeOptions options = new ChromeOptions();
     options.addArguments("--headless");
     driver = new ChromeDriver(options);
-    
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
@@ -82,7 +80,7 @@ public class D3Test {
       String attribute = element.getAttribute("src");
       vars.put("img", attribute);
     }
-    assertEquals(vars.get("img").toString(), "http://localhost:8080images/cat2.jpg");
+    assertEquals(vars.get("img").toString(), "http://localhost:8080/images/cat2.jpg");
   }
   @Test
   public void tEST4LISTING() {
@@ -160,7 +158,7 @@ public class D3Test {
   }
   @Test
   public void tEST11GREETACATWITHNAME() {
-    driver.get("http://localhost:8080greet-a-cat/Jennyanydots");
+    driver.get("http://localhost:8080/greet-a-cat/Jennyanydots");
     assertThat(driver.findElement(By.cssSelector("#greeting > h4")).getText(), is("Meow! from Jennyanydots."));
   }
 }
